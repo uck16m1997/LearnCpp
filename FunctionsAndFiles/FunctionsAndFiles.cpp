@@ -1,8 +1,8 @@
 
 #include <iostream>
-// Scope is a compileTime property and trying to use an identifier when it is not in scope will result in a compile error.
-int scopeFunction(int x);
 
+int scopeFunction(); // function declaration includes return type, name, parameters, and semicolon.  No function body!
+int add(int a, int b); // This functions definition is in another cpp file that Linker knows
 
 int main()
 {
@@ -11,6 +11,7 @@ int main()
     // In modern C++ (especially since C++17), the compiler has many tricks to avoid generating temporaries
     // Since the return value of scopeFunction() is immediately output the compiler can use the return value to directly initialize the parameter of operator<<
     std::cout << scopeFunction() << "\n";
+    std::cout << add(5, 6) << "\n";
 
 }
 
