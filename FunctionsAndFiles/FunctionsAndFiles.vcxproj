@@ -142,6 +142,9 @@
     <ClCompile Include="Add.cpp" />
     <ClCompile Include="FunctionsAndFiles.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Add.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

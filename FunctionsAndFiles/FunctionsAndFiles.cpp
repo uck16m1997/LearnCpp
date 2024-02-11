@@ -1,8 +1,13 @@
 
+// Preprocessor Directives
 #include <iostream>
+#include "Add.h"
+// Object like macro with substitution ( Considered obsolte and bad practice look constants instead)
+# define MY_NAME "Umut"
+// Object like macro no substitution ( Valid practice )
+# define PRINT_JOE
 
 int scopeFunction(); // function declaration includes return type, name, parameters, and semicolon.  No function body!
-int add(int a, int b); // This functions definition is in another cpp file that Linker knows
 
 int main()
 {
@@ -12,6 +17,20 @@ int main()
     // Since the return value of scopeFunction() is immediately output the compiler can use the return value to directly initialize the parameter of operator<<
     std::cout << scopeFunction() << "\n";
     std::cout << add(5, 6) << "\n";
+
+    std::cout << MY_NAME << "\n";
+
+#ifdef PRINT_JOE
+    std::cout << "Joe\n"; // will be compiled since PRINT_JOE is defined
+#endif
+
+#ifdef PRINT_BOB
+    std::cout << "Bob\n"; // will be excluded since PRINT_BOB is not defined
+#endif
+
+#ifndef PRINT_TOM
+    std::cout << "Tom\n"; // will be compiled since PRINT_TOM is not defined
+#endif
 
 }
 
