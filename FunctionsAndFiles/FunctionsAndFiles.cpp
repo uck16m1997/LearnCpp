@@ -1,5 +1,7 @@
 
 // Preprocessor Directives
+// <> brackets are for header files we didn't write and are searched in include directories
+// "" header files are searched in current directory first
 #include <iostream>
 #include "Add.h"
 // Object like macro with substitution ( Considered obsolte and bad practice look constants instead)
